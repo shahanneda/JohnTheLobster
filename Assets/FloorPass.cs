@@ -23,8 +23,6 @@ public class FloorPass : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D col)
     {
         if( col.gameObject.CompareTag("Player")){
-            print("I GOT HERE BUDDY");
-
             GameObject newLevelPiece = Instantiate(levelPrefab, levelSpawnLocation.position, Quaternion.identity, levelParent) as GameObject;
         }
     }
