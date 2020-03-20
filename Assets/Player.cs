@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
             float noise = Mathf.PerlinNoise(transform.position.x * 0.01f, 1);
             print(noise);
 
-            GameObject level = Instantiate(piece, new Vector3(transform.position.x + distance + 10,
+            GameObject level = Instantiate(piece, new Vector3(transform.position.x + distance + 50,
                                                               noise * scale, transform.position.z),
                                            Quaternion.identity, parent);
 
