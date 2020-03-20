@@ -5,9 +5,6 @@ using UnityEngine;
 public class PieceEnd : MonoBehaviour
 {
 
-    public GameObject piece;
-    public float scale = 10;
-    public Transform parent;
     // Start is called before the first frame update
     void Start()
     {

@@ -11,6 +11,10 @@ public class Player : MonoBehaviour
     public float moveSpeed = 2;
 
 
+    public GameObject piece;
+    public float scale = 10;
+    public Transform parent;
+
     void Start()
     {
         lastUpdateTime = Time.time;
@@ -23,8 +27,8 @@ public class Player : MonoBehaviour
         if(Input.GetKey(KeyCode.Space)){
             rb.AddForce(transform.right *  moveSpeed, ForceMode2D.Impulse);
         }
-        if(Time.time > lastUpdateTime + timeBetweenUpdate){
-            //lastUpdateTime = Time.time;
+        //if(true ||Time.time > lastUpdateTime + timeBetweenUpdate){
+            lastUpdateTime = Time.time;
             //rb.AddForce(new Vector2(+0.5f  *moveSpeed, -0.8f  *moveSpeed), ForceMode2D.Impulse);
             Transform start = piece.transform.GetChild(0);
             Transform end = piece.transform.GetChild(1);
@@ -37,6 +41,6 @@ public class Player : MonoBehaviour
                                                               noise * scale, transform.position.z),
                                            Quaternion.identity, parent);
 
-        }
+        //}
     }
 }
