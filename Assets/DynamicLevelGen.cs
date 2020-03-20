@@ -21,7 +21,9 @@ public class DynamicLevelGen : MonoBehaviour
             float noise = Mathf.PerlinNoise(i*0.01f, 1);
             print(noise);
 
-            GameObject level = Instantiate(piece, new Vector3(transform.position.x + i*distance, transform.position.y + noise*scale, transform.position.z), Quaternion.identity, transform);
+            GameObject level = Instantiate(piece, new Vector3(transform.position.x + i*distance + 10,
+                                                              noise * scale, transform.position.z),
+                                           Quaternion.identity, transform);
         }
     }
 }
