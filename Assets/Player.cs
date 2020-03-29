@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     public GameObject piece;
     public float scale = 10;
+    public float noiseScale = 0.01f;
     public Transform parent;
 
     void Start()
@@ -34,10 +35,10 @@ public class Player : MonoBehaviour
             Transform end = piece.transform.GetChild(1);
             float distance = Mathf.Abs(start.position.magnitude - end.position.magnitude);
 
-            float noise = Mathf.PerlinNoise(transform.position.x * 0.01f, 1);
+            float noise = Mathf.PerlinNoise(transform.position.x * noiseScale, 1);
             print(noise);
 
-            GameObject level = Instantiate(piece, new Vector3(transform.position.x + distance + 50,
+            GameObject level = Instantiate(piece, new Vector3(transform.position.x + distance + 100,
                                                               noise * scale, transform.position.z),
                                            Quaternion.identity, parent);
 
